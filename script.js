@@ -11,7 +11,7 @@ class ninja {
   }
   showStats() {
     //esto deberia mostrar el nombre, la fuerza, la velocidad y la salud del ninja.
-    console.log(`El nombre del ninja es: ${this.nombre}, Fuerza: ${this.fuerza}, Velocidad: ${this.velocidad}, Salud: ${this.salud}`);
+    console.log(`Nombre: ${this.nombre}, Fuerza: ${this.fuerza}, Velocidad: ${this.velocidad}, Salud: ${this.salud}`);
   }
   drinkSake() {
     //esto deberia agregar +10 de salud al ninja.
@@ -25,3 +25,19 @@ const myNinja = new ninja("Totti", 50, 3, 3);
 myNinja.sayName();
 myNinja.showStats();
 myNinja.drinkSake();
+
+class Sensei extends ninja {
+  constructor(nombre, salud, velocidad, fuerza, sabiduria) {
+    super(nombre, salud, velocidad, fuerza);
+    this.sabiduria = 10;
+  }
+  speakWisdom() {
+      this.drinkSake();
+      console.log("Crear errores no te convierte en un mal desarrollador, ¡te convierte en un desarrollador!");
+  }
+}
+
+const mySensei = new Sensei("Master Splinter", 210, 10, 10);
+
+mySensei.showStats();
+mySensei.speakWisdom();
